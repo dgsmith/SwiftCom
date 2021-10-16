@@ -39,7 +39,12 @@ public struct ColorThemePlain: ColorTheme {
     public let name: String = "Plain"
     
     public let main: Color = .blue
+#if os(watchOS)
     public let highlight: Color = .white
+#else
+    public let highlight: Color = Color(UIColor.label)
+#endif
+
     public let inRange: Color = .green
     public let aboveRange: Color = .yellow
     public let belowRange: Color = .red
@@ -59,14 +64,26 @@ public struct ColorThemeJamie: ColorTheme {
     public init() {}
 }
 
+public struct ColorThemeJamieAlt: ColorTheme {
+    public let name: String = "Jamie Alt"
+
+    public let main: Color = .yellow
+    public let highlight: Color = .cyan
+    public let inRange: Color = .pink
+    public let aboveRange: Color = .green
+    public let belowRange: Color = .purple
+
+    public init() {}
+}
+
 extension Color {
-    public static let yellowCrayola = Color("YellowCrayola")
-    public static let candyPink = Color("CandyPink")
-    public static let claret = Color("Claret")
-    public static let palePink = Color("PalePink")
-    public static let queenBlue = Color("QueenBlue")
-    public static let screaminGreen = Color("ScreaminGreen")
-    public static let skyBlueCrayola = Color("SkyBlueCrayola")
-    public static let cameoPink = Color("CameoPink")
-    public static let shimmeringBlush = Color("ShimmeringBlush")
+    public static let yellowCrayola = Color("YellowCrayola", bundle: .module)
+    public static let candyPink = Color("CandyPink", bundle: .module)
+    public static let claret = Color("Claret", bundle: .module)
+    public static let palePink = Color("PalePink", bundle: .module)
+    public static let queenBlue = Color("QueenBlue", bundle: .module)
+    public static let screaminGreen = Color("ScreaminGreen", bundle: .module)
+    public static let skyBlueCrayola = Color("SkyBlueCrayola", bundle: .module)
+    public static let cameoPink = Color("CameoPink", bundle: .module)
+    public static let shimmeringBlush = Color("ShimmeringBlush", bundle: .module)
 }

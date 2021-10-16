@@ -68,7 +68,7 @@ public class GGOptions: ObservableObject {
     }
     
     /// Array of all available color themes
-    public let themes: [ColorTheme] = [ColorThemePlain(), ColorThemeJamie()]
+    public let themes: [ColorTheme] = [ColorThemePlain(), ColorThemeJamie(), ColorThemeJamieAlt()]
     
     // TODO: implement?
     /// The TimeInterval for which to automatically check for Dexcom updates
